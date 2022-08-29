@@ -874,6 +874,7 @@ def process_dicom_directory(
             ]
 
     if len(dicom_file_list) == 0:
+        print("dicom file list: ", dicom_file_list)
         logger.info("No DICOM files found in input directory. Exiting now.")
         return
 
