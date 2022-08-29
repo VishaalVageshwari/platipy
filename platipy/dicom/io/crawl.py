@@ -182,7 +182,7 @@ def safe_sort_dicom_image_list(dicom_image_list):
     for dicom_file in dicom_image_list:
         dcm = pydicom.read_file(dicom_file, force=True)
 
-        if 'PlanePositionSequence' in dcm and 'PlaneOrientationSequence' in dcm:
+        if "PlanePositionSequence" in dcm and "PlaneOrientationSequence" in dcm:
             image_position = np.array(dcm.PlanePositionSequence[0].ImagePositionPatient, dtype=float)
             image_orientation = np.array(dcm.PlaneOrientationSequence[0].ImageOrientationPatient, dtype=float)
         else:
@@ -858,7 +858,7 @@ def process_dicom_directory(
         dicom_file_list = [
             p
             for p in root_path.glob("**/*")
-            if p.name.lower().endswith((".dcm", ".dc3", ".DICOM"))
+            if p.name.lower().endswith((".dcm", ".dc3", ".dicom"))
         ]
 
     elif hasattr(dicom_directory, "__iter__"):
@@ -870,7 +870,7 @@ def process_dicom_directory(
             dicom_file_list += [
                 p
                 for p in root_path.glob("**/*")
-                if p.name.lower().endswith((".dcm", ".dc3", ".DICOM"))
+                if p.name.lower().endswith((".dcm", ".dc3", ".dicom"))
             ]
 
     if len(dicom_file_list) == 0:
