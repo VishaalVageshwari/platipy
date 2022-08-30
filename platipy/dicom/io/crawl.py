@@ -942,6 +942,7 @@ def process_dicom_directory(
                 # Occasionally these will both be blank
 
                 parent_sorting_data = dicom_file_metadata["parent_sorting_data"]
+                print('Here')
                 print(parent_sorting_data)
                 if "parent_sorting_data" not in output_data_dict.keys():
                     output_data_dict["parent_sorting_data"] = parent_sorting_data
