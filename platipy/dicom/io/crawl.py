@@ -895,9 +895,11 @@ def process_dicom_directory(
 
     output = {}
 
+    print('Here 1')
     for parent_data, dicom_series_dict in dicom_series_dict_parent.items():
         logger.info(f"Processing data for {parent_sorting_field} = {parent_data}.")
         logger.info(f"  Number of DICOM series = {len(dicom_series_dict.keys())}")
+        print('Here 2')
 
         # Set up the output data
         # This stores the SimpleITK images and file names
@@ -915,6 +917,7 @@ def process_dicom_directory(
 
         # For each unique series UID, process the DICOM files
         for series_uid in dicom_series_dict.keys():
+            print('Here 3')
 
             # This function returns four values
             # 1. dicom_type: This is IMAGES, STRUCTURES, DOSES, etc
@@ -942,7 +945,7 @@ def process_dicom_directory(
                 # Occasionally these will both be blank
 
                 parent_sorting_data = dicom_file_metadata["parent_sorting_data"]
-                print('Here')
+                print('Here 4')
                 print(parent_sorting_data)
                 if "parent_sorting_data" not in output_data_dict.keys():
                     output_data_dict["parent_sorting_data"] = parent_sorting_data
