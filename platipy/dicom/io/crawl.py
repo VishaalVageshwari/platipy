@@ -730,6 +730,7 @@ def write_output_data_to_disk(
     if output_data_dict is None:
         return
 
+    print(output_data_dict)
     filename_fields = [i for i in output_data_dict.keys() if i != "parent_sorting_data"]
     parent_sorting_data = output_data_dict["parent_sorting_data"]
 
@@ -874,7 +875,6 @@ def process_dicom_directory(
             ]
 
     if len(dicom_file_list) == 0:
-        print("dicom file list: ", dicom_file_list)
         logger.info("No DICOM files found in input directory. Exiting now.")
         return
 
