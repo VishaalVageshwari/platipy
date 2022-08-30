@@ -438,6 +438,8 @@ def process_dicom_series(
         )
         initial_dicom_sop_class_name = initial_sop_class_name_default
 
+    print(initial_dicom_sop_class_name)
+
     try:
         study_uid = initial_dicom.StudyInstanceUID
     except AttributeError:
